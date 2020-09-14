@@ -96,7 +96,7 @@ class Lifestyle_Activity : AppCompatActivity(), View.OnClickListener {
         gson = Gson()
         init()
 
-
+        getHobies()
         // Set the toolbar
         setSupportActionBar(activity_main_toolbar)
 
@@ -239,9 +239,10 @@ class Lifestyle_Activity : AppCompatActivity(), View.OnClickListener {
         val i = v.id
         if (i == R.id.llHobbies) {
 
-            llalllistview.visibility = View.GONE
-            tvLoading.visibility = View.VISIBLE
+//            llalllistview.visibility = View.GONE
+//            tvLoading.visibility = View.VISIBLE
 
+            tvTitle1.visibility = View.VISIBLE
             tvTitle1.visibility = View.VISIBLE
             tvTitle2.visibility = View.VISIBLE
             tvTitle3.visibility = View.VISIBLE
@@ -261,7 +262,7 @@ class Lifestyle_Activity : AppCompatActivity(), View.OnClickListener {
 
             Handler().postDelayed({
 
-                getHobies()
+
             }, 1000)
             nestedscroll.scrollTo(0, 0);
 
@@ -582,6 +583,7 @@ class Lifestyle_Activity : AppCompatActivity(), View.OnClickListener {
                     navigation_rv.adapter = hobies_adapter
                     rv_indoor.adapter = indoor_adapter
                     rv_outdoor.adapter = outdoor_adapter
+
                     hobies_adapter.notifyDataSetChanged()
                     indoor_adapter.notifyDataSetChanged()
                     outdoor_adapter.notifyDataSetChanged()
